@@ -1,9 +1,9 @@
 const express = require('express');
-const { registerUser, loginUser } = require('../controllers/authController');
-const Router = express.Router();
+const jwt = require('jsonwebtoken');
+const User = require('../models/User'); 
+const router = express.Router();
+const {loginUser} = require('../controllers/authController')
 
-router.post('/register', registerUser);
 router.post('/login', loginUser);
 
 module.exports = router;
-

@@ -1,33 +1,53 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { styled } from '@mui/system'; 
+
+
+const Title = styled(Typography)({
+  flexGrow: 1,
+  fontWeight: 'bold', 
+});
+
+const CustomButton = styled(Button)(({ theme }) => ({
+  marginLeft: theme?.spacing(2) || '16px', 
+  '&:hover': {
+    backgroundColor: theme?.palette?.primary?.light || '#6b74aa',
+  },
+}));
+
+const CustomAppBar = styled(AppBar)({
+  backgroundColor: '#2E3B55', 
+});
 
 const Navbar = () => {
   return (
-    <AppBar position="static">
+    <CustomAppBar position="static">
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Travel Exchange Platform
-        </Typography>
-        <Button color="inherit" component={Link} to="/">
+        <Title variant="h6">
+          Travel Exchange
+        </Title>
+        <CustomButton color="inherit" component={Link} to="/">
           Home
-        </Button>
-        <Button color="inherit" component={Link} to="/profile">
+        </CustomButton>
+        <CustomButton color="inherit" component={Link} to="/profile">
           Profile
-        </Button>
-        <Button color="inherit" component={Link} to="/add-experience">
-      
-         Add Experience
-        </Button>
-    
-        <Button color="inherit" component={Link} to="/login">Login</Button> 
+        </CustomButton>
+        <CustomButton color="inherit" component={Link} to="/add-experience">
+          Add Experience
+        </CustomButton>
+        <CustomButton color="inherit" component={Link} to="/login">
+          Login
+        </CustomButton>
+        <CustomButton color="inherit" component={Link} to="/register">
+          Register
+        </CustomButton>
       </Toolbar>
-    </AppBar>
+    </CustomAppBar>
   );
 };
 

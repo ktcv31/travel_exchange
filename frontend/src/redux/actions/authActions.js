@@ -1,7 +1,7 @@
 export const loginUser = (email, password) => {
     return async (dispatch) => {
       try {
-        const res = await fetch('/api/auth/login', {
+        const res = await fetch('http://localhost:5001/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
@@ -21,7 +21,7 @@ export const loginUser = (email, password) => {
   export const registerUser = (username, email, password) => {
     return async (dispatch) => {
       try {
-        const res = await fetch('/api/auth/register', {
+        const res = await fetch('http://localhost:5001/api/users', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, email, password }),
