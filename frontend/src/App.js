@@ -8,6 +8,8 @@ import AddExperience from './components/Experiences/AddExperience';
 import ExperienceCard from './components/Experiences/ExperienceCard';
 import Home from './components/Auth/Home'; 
 import MapSearch from './components/Shared/Map'; // Import MapSearch
+import Profile from './components/Auth/Profile'; 
+
 
 function NotFound() {
   return <h1>404 - Page Not Found</h1>;
@@ -24,6 +26,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/add-experience" element={<AddExperience />} />
+            <Route path="/profile" element={<Profile />} /> 
             <Route path="/experience-card" element={<ExperienceCard />} />
             <Route path="/explore" element={<MapSearch />} /> 
             <Route path="*" element={<NotFound />} /> 
