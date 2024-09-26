@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Layout/Navbar';
-import Footer from './components/Layout/Footer'; // Footer import
+import Footer from './components/Layout/Footer'; 
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import AddExperience from './components/Experiences/AddExperience';
 import ExperienceCard from './components/Experiences/ExperienceCard';
-import Home from './components/Auth/Home'; // Use the imported Home component
+import Home from './components/Auth/Home'; 
+import MapSearch from './components/Shared/Map'; // Import MapSearch
 
 function NotFound() {
   return <h1>404 - Page Not Found</h1>;
@@ -24,7 +25,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/add-experience" element={<AddExperience />} />
             <Route path="/experience-card" element={<ExperienceCard />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/explore" element={<MapSearch />} /> 
+            <Route path="*" element={<NotFound />} /> 
           </Routes>
         </div>
         <Footer />

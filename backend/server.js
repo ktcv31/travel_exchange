@@ -1,8 +1,8 @@
-// server.js
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const axios = require('axios');
 
 // Load environment variables
 dotenv.config();
@@ -18,11 +18,13 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoutes');
 const experienceRoutes = require('./routes/experienceRoutes');
 const userRoutes = require('./routes/userRoutes');
+const weatherRoutes = require('./routes/weatherRoutes'); 
 
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/experiences', experienceRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api', weatherRoutes); 
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

@@ -36,9 +36,14 @@ const Footer = () => {
               Add Experience
             </Link>
             <br />
-            <Link href="/profile" color="inherit" underline="hover">
-              Profile
+            <Link href="/explore" color="inherit" underline="hover">
+              Explore
+              <br />
             </Link>
+            <br />
+            {/* <Link href="/profile" color="inherit" underline="hover">
+              Profile
+            </Link> */}
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>

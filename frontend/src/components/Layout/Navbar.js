@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { styled } from '@mui/system'; 
 
-
 const Title = styled(Typography)({
   flexGrow: 1,
   fontWeight: 'bold', 
@@ -34,11 +33,14 @@ const Navbar = () => {
         <CustomButton color="inherit" component={Link} to="/">
           Home
         </CustomButton>
-        <CustomButton color="inherit" component={Link} to="/profile">
+        {/* <CustomButton color="inherit" component={Link} to="/profile">
           Profile
-        </CustomButton>
+        </CustomButton> */}
         <CustomButton color="inherit" component={Link} to="/add-experience">
           Add Experience
+        </CustomButton>
+        <CustomButton color="inherit" component={Link} to="/explore"> {/* Add Explore Tab */}
+          Explore
         </CustomButton>
         <CustomButton color="inherit" component={Link} to="/login">
           Login

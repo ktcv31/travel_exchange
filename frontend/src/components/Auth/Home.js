@@ -26,7 +26,7 @@ const Home = () => {
         Share your travel experiences and explore new destinations with friends.
       </Typography>
       <ImageContainer>
-        <HomeImage src="/images/travel-home.jpg" alt="Travel" />
+        <HomeImage src="/images/travel.jpg" alt="Travel" />
       </ImageContainer>
     </Container>
   );
