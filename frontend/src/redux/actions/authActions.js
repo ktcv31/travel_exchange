@@ -1,7 +1,9 @@
+const base_url = process.env.REACT_API_BASE_URL || 'https://travel-exchange.onrender.com/api';
+
 export const loginUser = (email, password) => {
     return async (dispatch) => {
       try {
-        const res = await fetch('http://localhost:5001/api/auth/login', {
+        const res = await fetch(`${base_url}/api/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
@@ -21,7 +23,7 @@ export const loginUser = (email, password) => {
   export const registerUser = (username, email, password) => {
     return async (dispatch) => {
       try {
-        const res = await fetch('http://localhost:5001/api/users', {
+        const res = await fetch(`${base_url}/api/users`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, email, password }),
