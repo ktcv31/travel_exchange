@@ -1,7 +1,9 @@
+const base_url = process.env.REACT_API_BASE_URL || 'https://travel-exchange.onrender.com/api';
+
 export const fetchExperiences = (params) => {
     return async (dispatch) => {
       try {
-        const res = await fetch(`/api/experiences?location=${params.city}`);
+        const res = await fetch(`${base_url}/api/experiences?location=${params.city}`);
         const data = await res.json();
         dispatch({ type: 'FETCH_EXPERIENCES_SUCCESS', payload: data });
       } catch (err) {
@@ -13,7 +15,7 @@ export const fetchExperiences = (params) => {
   export const addExperience = (experienceData) => {
     return async (dispatch) => {
       try {
-        const res = await fetch('http://localhost:5001/api/experiences', {
+        const res = await fetch(`${base_url}/api/experiences`, {
           method: 'POST',
           body: experienceData,
         });
