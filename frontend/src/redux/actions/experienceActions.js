@@ -13,7 +13,7 @@ export const fetchExperiences = (params) => {
   export const addExperience = (experienceData) => {
     return async (dispatch) => {
       try {
-        const res = await fetch('/api/experiences', {
+        const res = await fetch('http://localhost:5001/api/experiences', {
           method: 'POST',
           body: experienceData,
         });
