@@ -41,9 +41,9 @@ const Footer = () => {
               <br />
             </Link>
             <br />
-            {/* <Link href="/profile" color="inherit" underline="hover">
+           <Link href="/profile" color="inherit" underline="hover">
               Profile
-            </Link> */}
+            </Link> 
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
