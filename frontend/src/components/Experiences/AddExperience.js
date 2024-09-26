@@ -17,7 +17,7 @@ const AddExperience = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${base_url}/api/experiences`, {
+      const response = await fetch(`${base_url}/experiences`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(experience),
