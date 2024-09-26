@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Container, Box, Alert } from '@mui/material';
 
+const base_url = process.env.REACT_API_BASE_URL || 'https://travel-exchange.onrender.com/api';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await fetch('http://localhost:5001/api/auth/login', {
+      const response = await fetch(`${base_url}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

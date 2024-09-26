@@ -20,6 +20,10 @@ const experienceRoutes = require('./routes/experienceRoutes');
 const userRoutes = require('./routes/userRoutes');
 const weatherRoutes = require('./routes/weatherRoutes'); 
 
+app.get('/health', (req, res) => {
+  res.status(200).json({message: 'up and running'});
+});
+
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/experiences', experienceRoutes);
