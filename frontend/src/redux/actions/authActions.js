@@ -30,7 +30,7 @@ export const loginUser = (email, password) => {
         });
         const data = await res.json();
         if (res.ok) {
-            window.location.href = '/profile';
+            window.location.href = '/Profile';
           dispatch({ type: 'REGISTER_SUCCESS', payload: data });
         } else {
           dispatch({ type: 'REGISTER_FAIL', payload: data.error });
