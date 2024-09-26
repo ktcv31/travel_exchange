@@ -4,7 +4,7 @@ const axios = require('axios');
 const router = express.Router();
 
 
-const WEATHER_API_KEY = 'cee0e411bed373f23ea7142a06136de9';
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 
 
 router.get('/weather/:location', async (req, res) => {

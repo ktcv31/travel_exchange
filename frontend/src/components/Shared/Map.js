@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyDNy3Tna-h6t2i6_29lU9NKJQjdGs8LS6s';
+const GOOGLE_MAPS_API_KEY =  process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const MapSearch = () => {
   const [location, setLocation] = useState('');
