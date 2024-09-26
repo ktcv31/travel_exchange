@@ -32,7 +32,7 @@ const Footer = () => {
               Home
             </Link>
             <br />
-            <Link href="/addExperience" color="inherit" underline="hover">
+            <Link href="/experiences" color="inherit" underline="hover">
               Add Experience
             </Link>
             <br />
