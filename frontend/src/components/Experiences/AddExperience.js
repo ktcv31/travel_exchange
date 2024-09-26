@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Container, Box } from '@mui/material';
 
+const base_url = process.env.REACT_API_BASE_URL || 'https://travel-exchange.onrender.com/api';
+
 const AddExperience = () => {
   const [experience, setExperience] = useState({
     title: '',
@@ -15,7 +17,7 @@ const AddExperience = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/experiences', {
+      const response = await fetch(`${base_url}/api/experiences`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(experience),
