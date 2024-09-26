@@ -21,11 +21,9 @@ const MapSearch = () => {
 
   const handleSearch = async () => {
     try {
-      
-      const weatherResponse = await axios.get(`/api/weather/${location}`);
+      const weatherResponse = await axios.get(`http://localhost:5001/api/weather/${location}`);
       setWeather(weatherResponse.data);
-
-     
+  
       const geoResponse = await axios.get(
         `https://maps.googleapis.com/maps/api/geocode/json`,
         {
@@ -35,10 +33,9 @@ const MapSearch = () => {
           },
         }
       );
-
+  
       if (geoResponse.data.results.length > 0) {
         const { lat, lng } = geoResponse.data.results[0].geometry.location;
-     
         map.current.setCenter({ lat, lng });
         map.current.setZoom(10);
         new window.google.maps.Marker({
@@ -52,7 +49,7 @@ const MapSearch = () => {
       console.error('Error fetching data:', error);
     }
   };
-
+  
   return (
     <div>
       <input
