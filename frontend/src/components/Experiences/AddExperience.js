@@ -19,7 +19,7 @@ const AddExperience = () => {
     try {
       const response = await fetch(`${base_url}/experiences`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*' },
         body: JSON.stringify(experience),
       });
       if (response.ok) {

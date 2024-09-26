@@ -5,7 +5,7 @@ export const loginUser = (email, password) => {
       try {
         const res = await fetch(`${base_url}/auth/login`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*' },
           body: JSON.stringify({ email, password }),
         });
         const data = await res.json();
@@ -25,7 +25,7 @@ export const loginUser = (email, password) => {
       try {
         const res = await fetch(`${base_url}/users`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*' },
           body: JSON.stringify({ username, email, password }),
         });
         const data = await res.json();
